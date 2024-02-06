@@ -1,14 +1,16 @@
-const { setTimeout } = require("timers/promises");
-
 var exec = require("child_process").exec;
 function start(response){
-    console.log("le gestionnaire 'start' est appele");
-    setTimeout(10,function(){
+   console.log("le gestionnaire 'start' est appele");
+    function sleep (milliseconde){
+        var startTime = new Date().getTime();
+        while(new Date().getTime() < startTime + milliseconde){
+            
+        }
+     }
+        sleep(10000);
         response.writeHead(200,{"Content-Type": "Text/plain" });
         response.write("sssss");
-        response.end();
-
-    })  ;  
+        response.end();  
 }
 function upload(response){
     console.log("le gestionnaire 'upload' est appele");
